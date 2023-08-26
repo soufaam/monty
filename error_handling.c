@@ -1,9 +1,15 @@
 #include "monty.h"
 
-
+/**
+* error_handling - ENTRYPOINT
+* @argc: args counter
+* @argv: args vector
+* @file: file
+* Return: 0 success or uint
+*/
 void error_handling(int argc, char **argv, FILE **file)
 {
-	FILE * fil;
+	FILE *fil;
 
 	if (argc != 2)
 	{
@@ -13,7 +19,8 @@ void error_handling(int argc, char **argv, FILE **file)
 	fil = fopen(argv[1], "r");
 	if (!fil)
 	{
-		write(STDERR_FILENO, "Error: Can't open file", _strlen("Error: Can't open file"));
+		write(STDERR_FILENO, "Error: Can't open file",
+		_strlen("Error: Can't open file"));
 		write(STDERR_FILENO, argv[1], _strlen(argv[1]));
 		write(STDERR_FILENO, "\n", _strlen("\n"));
 		exit(EXIT_FAILURE);
