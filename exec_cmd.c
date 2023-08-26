@@ -28,7 +28,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 			{
 				if (!grid[1])
 				{
-					write(STDERR_FILENO, "L ", 2);
+					write(STDERR_FILENO, "L", 2);
 					prinInt(line_number);
 					write(STDERR_FILENO, ": usage: push integer\n",
 					_strlen(": usage: push integer\n"));
@@ -40,8 +40,8 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		}
 	}
 	if (opcode_tab[index].f == NULL)
-	{		
-		write(STDERR_FILENO, "L ", 2);
+	{
+		write(STDERR_FILENO, "L", 2);
 		prinInt(line_number);
 		write(STDERR_FILENO, ": unknown instruction ",
 		_strlen(": unknown instruction "));
