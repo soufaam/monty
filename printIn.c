@@ -21,8 +21,6 @@ void  prinInt(int var)
 	}
 	if (var / 10)
 		prinInt(var / 10);
-	if (var / 10 == 0)
-		return;
 	ch = var % 10 + '0';
 	write(STDERR_FILENO, &ch, 1);
 }

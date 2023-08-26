@@ -12,7 +12,7 @@ var_t lt = {"NULL"};
 
 int main(int argc, char **argv)
 {
-	size_t i = 0;
+	int i = 0;
 	size_t numberchar;
 	char str[MAX_LINE_LENGTH], **grid;
 	stack_t *header = NULL;
