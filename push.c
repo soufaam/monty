@@ -100,7 +100,7 @@ void _add(stack_t **header, unsigned int line_number)
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't swap, stack too short\n",
-		_strlen(": can't swap, stack too short\n"));
+		_strlen(": can't add, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
 		fclose(lt.file);
