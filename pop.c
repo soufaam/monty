@@ -28,3 +28,9 @@ void _pop(stack_t **header, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+
+void _nop(stack_t **header, unsigned int line_number)
+{
+	(void)header;
+	(void)line_number;
+}

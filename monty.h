@@ -73,5 +73,6 @@ void exec_cmd(stack_t **header, char **grid, int line_number);
 void _swap(stack_t **header, unsigned int line_number);
 void  prinInt(int var);
 void _add(stack_t **header, unsigned int line_number);
+void _nop(stack_t **header, unsigned int line_number);
 
 #endif
