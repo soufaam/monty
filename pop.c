@@ -25,10 +25,17 @@ void _pop(stack_t **header, unsigned int line_number)
 		free_stack(*header);
 		free_grid(lt.grid);
 		fclose(lt.file);
+		free_grid(lt.biggrid);
 		exit(EXIT_FAILURE);
 	}
 }
 
+/**
+* _nop - ENTRYPOINT
+* @header: int parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
 void _nop(stack_t **header, unsigned int line_number)
 {
 	(void)header;

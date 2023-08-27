@@ -66,6 +66,7 @@ void _swap(stack_t **header, unsigned int line_number)
 		_strlen(": can't swap, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
+		free_grid(lt.biggrid);
 		fclose(lt.file);
 		exit(EXIT_FAILURE);
 	}
@@ -103,6 +104,7 @@ void _add(stack_t **header, unsigned int line_number)
 		_strlen(": can't add, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
+		free_grid(lt.biggrid);
 		fclose(lt.file);
 		exit(EXIT_FAILURE);
 	}

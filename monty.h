@@ -51,6 +51,7 @@ typedef struct var
 {
 	char *val;
 	char **grid;
+	char **biggrid;
 	FILE *file;
 }var_t;
 

@@ -19,19 +19,26 @@ void print_cmd_notfound(int line_number, char **cmd, stack_t *h)
 		free_stack(h);
 		fclose(lt.file);
 		free_grid(cmd);
+		free_grid(lt.biggrid);
 		exit(EXIT_FAILURE);
 }
 /**
 * print_push_error - ENTRYPOINT
 * @line_number: third param
+* @h: header
+* @cmd: command
 * Return: 0 success or uint
 */
-void print_push_error(int line_number)
+void print_push_error(int line_number, stack_t *h, char **cmd)
 {
 	write(STDERR_FILENO, "L", 1);
 	prinInt(line_number);
 	write(STDERR_FILENO, ": usage: push integer\n",
 	_strlen(": usage: push integer\n"));
+	free_stack(h);
+	fclose(lt.file);
+	free_grid(cmd);
+	free_grid(lt.biggrid);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -63,7 +70,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		{
 			if (index == 0)
 				if (!grid[1])
-					print_push_error(line_number);
+					print_push_error(line_number, *header, grid);
 			opcode_tab[index].f(header, line_number);
 			break;
 		}
