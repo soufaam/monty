@@ -29,10 +29,10 @@ int main(int argc, char **argv)
 			lt.grid = strtow(lt.biggrid[index], ' ');
 			if (!lt.grid)
 			continue;
-			exec_cmd(&header, lt.grid, i);
+			exec_cmd(&header, lt.grid, i + index);
 			free_grid(lt.grid);
 		}
-		i++;
+		i += index;
 		free_grid(lt.biggrid);
 	}
 	fclose(lt.file);

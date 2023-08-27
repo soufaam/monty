@@ -1,1 +1,1 @@
-push 2 3
+push 2; pushe 3
