@@ -2,13 +2,13 @@
 
 
 /**
-* print_push_error - ENTRYPOINT
+* print_cmd_notfound - ENTRYPOINT
 * @line_number: third param
 * @cmd: command
 * @h: header
 * Return: 0 success or uint
 */
-print_cmd_notfound(int line_number, char **cmd, stack_t *h)
+void print_cmd_notfound(int line_number, char **cmd, stack_t *h)
 {
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
@@ -19,14 +19,14 @@ print_cmd_notfound(int line_number, char **cmd, stack_t *h)
 		free_stack(h);
 		fclose(lt.file);
 		free_grid(cmd);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 }
 /**
 * print_push_error - ENTRYPOINT
 * @line_number: third param
 * Return: 0 success or uint
 */
-print_push_error(int line_number)
+void print_push_error(int line_number)
 {
 	write(STDERR_FILENO, "L", 1);
 	prinInt(line_number);
@@ -67,3 +67,4 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 	}
 	if (opcode_tab[index].f == NULL)
 		print_cmd_notfound(line_number, grid, *header);
+}
