@@ -37,7 +37,7 @@ void printop(stack_t **header, unsigned int line_number)
 
 	if (!*header || !header)
 	{
-		write(STDERR_FILENO, "L", 2);
+		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't pint, stack empty\n",
 		_strlen(": can't pall, stack empty\n"));
