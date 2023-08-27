@@ -70,6 +70,7 @@ void _pop(stack_t **header, unsigned int line_number);
 void printall(stack_t ** header, unsigned int line_number);
 void printop(stack_t **header, unsigned int line_number);
 void exec_cmd(stack_t **header, char **grid, int line_number);
+void _swap(stack_t **header, unsigned int line_number);
 void  prinInt(int var);
 
 #endif

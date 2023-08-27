@@ -2,7 +2,7 @@
 
 
 /**
-* _push - ENTRYPOINT
+* _push - push function
 * @header: header parameter
 * @line_number: line number
 * Return: 0 success or uint
@@ -40,4 +40,38 @@ void _push(stack_t **header, unsigned int line_number)
 	node->prev = NULL;
 	node->n = num;
 	*header = node;
+}
+
+/**
+* _swap - swap function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void _swap(stack_t **header, unsigned int line_number)
+{
+	stack_t *header_tmp = *header, *tmp = *header;
+	int i = 0;
+
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	if (i < 2)
+	{
+		write(STDERR_FILENO, "L", 1);
+		prinInt(line_number);
+		write(STDERR_FILENO, ": can't swap, stack too short\n",
+		_strlen(": can't swap, stack too short\n"));
+		free_stack(*header);
+		free_grid(lt.grid);
+		fclose(lt.file);
+		exit(EXIT_FAILURE);
+	}
+	*header = header_tmp->next;
+	header_tmp->next = (*header)->next;
+	(*header)->next = header_tmp;
+	(*header)->prev = NULL;
+	header_tmp->prev = *header;
 }
