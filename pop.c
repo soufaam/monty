@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
-* print_cmd_notfound - print error
+* print_cmd_pop_err - print error
 * @h: int parameter
 * @line_number: line number
 * Return: 0 success or uint
 */
-void print_cmd_notfound(int line_number, stack_t *h)
+void print_cmd_pop_err(int line_number, stack_t *h)
 {
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
@@ -31,7 +31,7 @@ void _pop(stack_t **header, unsigned int line_number)
 	stack_t *tmp = *header;
 
 	if (lt.grid[1])
-		print_cmd_notfound(line_number, header);
+		print_cmd_pop_err(line_number, *header);
 	if (tmp)
 	{
 		*header = tmp->next;
