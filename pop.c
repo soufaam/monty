@@ -22,5 +22,9 @@ void _pop(stack_t **header, unsigned int line_number)
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't pop an empty stack\n",
 		_strlen(": can't pop an empty stack\n"));
+		free_stack(*header);
+		free_grid(lt.grid);
+		fclose(lt.file);
+		exit(EXIT_FAILURE);
 	}
 }
