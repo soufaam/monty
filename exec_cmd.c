@@ -86,7 +86,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		if (grid && _strcmp(opcode_tab[index].opcode, grid[0]) == 0)
 		{
 			if (index == 0)
-				if (!isInteger(grid[1]))
+				if (!isInteger(grid[1]) || grid[2])
 					print_push_error(line_number, *header, grid);
 			opcode_tab[index].f(header, line_number);
 			break;
