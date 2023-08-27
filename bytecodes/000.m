@@ -1,1 +1,1 @@
-push 1; ppo
+push + pall + pop

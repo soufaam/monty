@@ -23,6 +23,23 @@ void print_cmd_notfound(int line_number, char **cmd, stack_t *h)
 		exit(EXIT_FAILURE);
 }
 /**
+* isInteger - ENTRYPOINT
+*@str: string var
+* Return: 0 success or uint
+*/
+int isInteger(char *str)
+{
+	int length = _strlen(str);
+	int i = 0;
+
+	if (!str)
+		return (0);
+	for (i = 0; i < length; i++)
+		if (!isdigit(str[i]))
+		return (0);
+	return (1);
+}
+/**
 * print_push_error - ENTRYPOINT
 * @line_number: third param
 * @h: header
@@ -69,7 +86,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		if (grid && _strcmp(opcode_tab[index].opcode, grid[0]) == 0)
 		{
 			if (index == 0)
-				if (!grid[1])
+				if (!isInteger(grid[1]))
 					print_push_error(line_number, *header, grid);
 			opcode_tab[index].f(header, line_number);
 			break;

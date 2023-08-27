@@ -9,6 +9,7 @@
 #define  _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
