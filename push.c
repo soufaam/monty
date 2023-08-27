@@ -75,3 +75,36 @@ void _swap(stack_t **header, unsigned int line_number)
 	(*header)->prev = NULL;
 	header_tmp->prev = *header;
 }
+
+/**
+* _add - _add function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void _add(stack_t **header, unsigned int line_number)
+{
+	stack_t *tmp = *header;
+	int i = 0, sum = 0;
+
+	while (tmp)
+	{
+		i++;
+		sum += tmp->n;
+		if (i >= 2)
+			break;
+		tmp = tmp->next;
+	}
+	if (i < 2)
+	{
+		write(STDERR_FILENO, "L", 1);
+		prinInt(line_number);
+		write(STDERR_FILENO, ": can't swap, stack too short\n",
+		_strlen(": can't swap, stack too short\n"));
+		free_stack(*header);
+		free_grid(lt.grid);
+		fclose(lt.file);
+		exit(EXIT_FAILURE);
+	}
+	(*header)->n = sum;
+}

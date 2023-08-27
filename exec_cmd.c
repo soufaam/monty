@@ -52,6 +52,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		{"pall", printall},
 		{"pint", printop},
 		{"swap", _swap},
+		{"add", _add},
 		{NULL, NULL}
 	};
 	lt.val = grid[1];
