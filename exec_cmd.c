@@ -35,9 +35,33 @@ int isInteger(char *str)
 	if (!str)
 		return (0);
 	for (i = 0; i < length; i++)
+	{
+		if (str[0] == '-')
+		continue;
 		if (!isdigit(str[i]))
 		return (0);
+	}
 	return (1);
+}
+/**
+* print_push_integer_err - ENTRYPOINT
+* @line_number: third param
+* @h: header
+* @cmd: command
+* Return: 0 success or uint
+*/
+void print_push_integer_err(int line_number, stack_t *h, char **cmd)
+{
+	write(STDERR_FILENO, "L", 1);
+	prinInt(line_number);
+	write(STDERR_FILENO, ": usage: push integer\n",
+	_strlen(": usage: push integer\n"));
+	free_stack(h);
+	fclose(lt.file);
+	free_grid(cmd);
+	free_grid(lt.biggrid);
+	exit(EXIT_FAILURE);
+
 }
 /**
 * print_push_error - ENTRYPOINT
@@ -88,7 +112,7 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 			if (index == 0)
 			{
 				if (!isInteger(grid[1]))
-					print_push_error(line_number, *header, grid);
+					print_push_integer_err(line_number, *header, grid);
 				if (grid[2])
 					print_cmd_notfound(line_number, grid, *header);
 			}

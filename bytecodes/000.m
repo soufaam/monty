@@ -1,1 +1,1 @@
-push 2; pushe 3
+push 2;pop jkhsadgkj; pall
