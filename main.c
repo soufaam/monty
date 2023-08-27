@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 			lt.grid = strtow(lt.biggrid[index], ' ');
 			if (!lt.grid)
 			continue;
-			exec_cmd(&header, lt.grid, index);
+			exec_cmd(&header, lt.grid, index + 1);
 			free_grid(lt.grid);
 		}
 		i++;
