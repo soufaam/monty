@@ -1,7 +1,7 @@
 #include "monty.h"
 #define MAX_LINE_LENGTH 1024
 
-var_t lt = {"NULL"};
+var_t lt = {NULL, NULL};
 /**
  * main - entry point
  * @argc: The number of argument
@@ -16,10 +16,9 @@ int main(int argc, char **argv)
 	size_t numberchar;
 	char str[MAX_LINE_LENGTH], **grid;
 	stack_t *header = NULL;
-	FILE *file;
 
-	error_handling(argc, argv, &file);
-	while (fgets(str, sizeof(str), file))
+	error_handling(argc, argv, &lt.file);
+	while (fgets(str, sizeof(str), lt.file))
 	{
 		numberchar = _strlen(str);
 		if (numberchar > 0 && str[numberchar - 1] == '\n')
@@ -31,7 +30,7 @@ int main(int argc, char **argv)
 		i++;
 		free_grid(grid);
 	}
-	fclose(file);
+	fclose(lt.file);
 	free_stack(header);
 	exit(EXIT_SUCCESS);
 	return (0);

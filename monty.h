@@ -50,6 +50,7 @@ typedef struct instruction_s
 typedef struct var
 {
 	char *val;
+	FILE *file;
 }var_t;
 
 extern var_t lt;

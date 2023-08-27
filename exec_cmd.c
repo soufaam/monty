@@ -47,6 +47,9 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 		_strlen(": unknown instruction "));
 		write(STDERR_FILENO, grid[0], _strlen(grid[0]));
 		write(STDERR_FILENO, "\n", 1);
+		free_stack(*header);
+		fclose(lt.file);
+		free_grid(grid);
 		exit(EXIT_FAILURE);
 	}
 }

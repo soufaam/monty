@@ -10,7 +10,6 @@ void _pop(stack_t **header, unsigned int line_number)
 {
 	stack_t *tmp = *header;
 
-	printf("here pop \n");
 	if (tmp)
 	{
 		*header = tmp->next;
@@ -22,6 +21,6 @@ void _pop(stack_t **header, unsigned int line_number)
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't pop an empty stack\n",
-		_strlen("L : can't pop an empty stack\n"));
+		_strlen(": can't pop an empty stack\n"));
 	}
 }
