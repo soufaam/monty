@@ -16,6 +16,10 @@ void printall(stack_t **header, unsigned int line_number)
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't pall, stack empty\n",
 		_strlen(": can't pall, stack empty\n"));
+		free_stack(*header);
+		free_grid(lt.grid);
+		fclose(lt.file);
+		free_grid(lt.biggrid);
 		exit(EXIT_FAILURE);
 	}
 	while (tmp)
@@ -41,6 +45,10 @@ void printop(stack_t **header, unsigned int line_number)
 		prinInt(line_number);
 		write(STDERR_FILENO, ": can't pint, stack empty\n",
 		_strlen(": can't pall, stack empty\n"));
+		free_stack(*header);
+		free_grid(lt.grid);
+		fclose(lt.file);
+		free_grid(lt.biggrid);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", tmp->n);

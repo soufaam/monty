@@ -1,1 +1,4 @@
-push 2;pop jkhsadgkj; pall
+push 2
+pint 
+pop
+pall
