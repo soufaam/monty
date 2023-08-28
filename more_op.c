@@ -10,7 +10,7 @@ void print_pchr_err(stack_t **header, int line_number)
 {
 	write(STDERR_FILENO, "L", 1);
 	prinInt(line_number);
-	write(STDERR_FILENO, ": can't pchar, stack empt\n",
+	write(STDERR_FILENO, ": can't pchar, stack empty\n",
 	_strlen(": can't pchar, stack empty\n"));
 	free_stack(*header);
 	free_grid(lt.grid);
