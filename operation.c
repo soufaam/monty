@@ -23,7 +23,7 @@ void _sub(stack_t **header, unsigned int line_number)
 	{
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
-		write(STDERR_FILENO, ": can't add, stack too short\n",
+		write(STDERR_FILENO, ": can't sub, stack too short\n",
 		_strlen(": can't sub, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
@@ -60,7 +60,7 @@ void _div(stack_t **header, unsigned int line_number)
 	{
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
-		write(STDERR_FILENO, ": can't add, stack too short\n",
+		write(STDERR_FILENO, ": can't div, stack too short\n",
 		_strlen(": can't div, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
@@ -97,7 +97,7 @@ void _mod(stack_t **header, unsigned int line_number)
 	{
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
-		write(STDERR_FILENO, ": can't add, stack too short\n",
+		write(STDERR_FILENO, ": can't mod, stack too short\n",
 		_strlen(": can't mod, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
@@ -132,7 +132,7 @@ void _mul(stack_t **header, unsigned int line_number)
 	{
 		write(STDERR_FILENO, "L", 1);
 		prinInt(line_number);
-		write(STDERR_FILENO, ": can't add, stack too short\n",
+		write(STDERR_FILENO, ": can't mul, stack too short\n",
 		_strlen(": can't mul, stack too short\n"));
 		free_stack(*header);
 		free_grid(lt.grid);
