@@ -1,2 +1,3 @@
-#push 12
-#pall
+push 98
+pchar Holberton
+pall
