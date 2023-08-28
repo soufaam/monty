@@ -111,8 +111,6 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 			{
 				if (!isInteger(grid[1]))
 					print_push_integer_err(line_number, *header, grid);
-				if (grid[2])
-					print_cmd_notfound(line_number, grid, *header);
 			}
 			opcode_tab[index].f(header, line_number);
 			break;
