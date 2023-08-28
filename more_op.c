@@ -100,7 +100,7 @@ void rotl(stack_t **header, unsigned int line_number)
 		tmp = tmp->next;
 	}
 	tmp = *header;
-	if (i > 2)
+	if (i >= 2)
 	while (tmp)
 	{
 		if (!tmp->next)
