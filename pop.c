@@ -30,8 +30,6 @@ void _pop(stack_t **header, unsigned int line_number)
 {
 	stack_t *tmp = *header;
 
-	if (lt.grid[1])
-		print_cmd_pop_err(line_number, *header);
 	if (tmp)
 	{
 		*header = tmp->next;
