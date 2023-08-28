@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		if (numberchar > 0 && str[numberchar - 1] == '\n')
 			str[numberchar - 1] = '\0';
 		lt.biggrid = strtow(str, ';');
-		for (index = 0; lt.biggrid[index]; index++)
+		for (index = 0; lt.biggrid && lt.biggrid[index]; index++)
 		{
 			lt.grid = strtow(lt.biggrid[index], ' ');
 			if (!lt.grid)
