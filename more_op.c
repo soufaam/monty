@@ -54,3 +54,27 @@ void _pchar(stack_t **header, unsigned int line_number)
 	/* c = tmp->n + '0'; */
 	printf("%c\n", tmp->n);
 }
+
+
+/**
+* pstr - pstr function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void pstr(stack_t **header, unsigned int line_number)
+{
+	stack_t *tmp = *header;
+
+	while (tmp)
+	{
+		if (tmp->n < 0 || tmp->n > 127)
+			break;
+		else if (tmp->n == 0)
+			break;
+		printf("%c", tmp->n);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	line_number++;
+}

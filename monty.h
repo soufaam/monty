@@ -83,4 +83,6 @@ void _mod(stack_t **header, unsigned int line_number);
 void _mul(stack_t **header, unsigned int line_number);
 void print_zerodiv_error(stack_t *h, int line_number);
 void _pchar(stack_t **header, unsigned int line_number);
+void pstr(stack_t **header, unsigned int line_number);
+
 #endif
