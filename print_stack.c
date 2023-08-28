@@ -15,6 +15,7 @@ void printall(stack_t **header, unsigned int line_number)
 		printf("%d\n", tmp->n);
 		tmp = tmp->next;
 	}
+	line_number += line_number;
 }
 
 /**
