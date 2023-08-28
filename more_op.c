@@ -78,3 +78,31 @@ void pstr(stack_t **header, unsigned int line_number)
 	printf("\n");
 	line_number++;
 }
+
+
+/**
+* rotl - rotl function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void rotl(stack_t **header, unsigned int line_number)
+{
+	stack_t *tmp = *header;
+	stack_t *store = *header;
+
+	while (tmp)
+	{
+		if (!tmp->next)
+		{
+			*header = (*header)->next;
+			(*header)->prev = NULL;
+			tmp->next = store;
+			store->prev = tmp;
+			store->next = NULL;
+			return;
+		}
+		tmp = tmp->next;
+	}
+	line_number++;
+}
