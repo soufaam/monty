@@ -32,6 +32,8 @@ int main(int argc, char **argv)
 			exec_cmd(&header, lt.grid, i + index);
 			free_grid(lt.grid);
 		}
+		if (!lt.biggrid)
+			index++;
 		i += index;
 		free_grid(lt.biggrid);
 	}
