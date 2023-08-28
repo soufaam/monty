@@ -27,8 +27,11 @@ int main(int argc, char **argv)
 		for (index = 0; lt.biggrid && lt.biggrid[index]; index++)
 		{
 			lt.grid = strtow(lt.biggrid[index], ' ');
-			if (!lt.grid)
-			continue;
+			if (!lt.grid || lt.grid[0][0] == '#')
+			{
+				free_grid(lt.grid);
+				continue;
+			}
 			exec_cmd(&header, lt.grid, i + index);
 			free_grid(lt.grid);
 		}
