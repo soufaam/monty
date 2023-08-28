@@ -99,6 +99,7 @@ void rotl(stack_t **header, unsigned int line_number)
 			break;
 		tmp = tmp->next;
 	}
+	tmp = *header;
 	if (i > 2)
 	while (tmp)
 	{
