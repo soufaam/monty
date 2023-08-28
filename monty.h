@@ -76,5 +76,10 @@ void _swap(stack_t **header, unsigned int line_number);
 void  prinInt(int var);
 void _add(stack_t **header, unsigned int line_number);
 void _nop(stack_t **header, unsigned int line_number);
-
+void _sub(stack_t **header, unsigned int line_number);
+void _div(stack_t **header, unsigned int line_number);
+void _sub(stack_t **header, unsigned int line_number);
+void _mod(stack_t **header, unsigned int line_number);
+void _mul(stack_t **header, unsigned int line_number);
+void print_zerodiv_error(stack_t *h, int line_number);
 #endif

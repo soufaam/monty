@@ -38,7 +38,6 @@ void _pop(stack_t **header, unsigned int line_number)
 		if (*header)
 			(*header)->prev = NULL;
 		free(tmp);
-		
 	}
 	else if (tmp == NULL || header == NULL)
 	{

@@ -95,13 +95,11 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 	int index = 0;
 
 	instruction_t opcode_tab[] = {
-		{"push", _push},
-		{"pop", _pop},
-		{"pall", printall},
-		{"pint", printop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop},
+		{"push", _push}, {"pop", _pop},
+		{"pall", printall}, {"pint", printop},
+		{"add", _add}, {"sub", _sub},
+		{"mod", _mod}, {"div", _div}, {"mul", _mul},
+		{"nop", _nop}, {"swap", _swap},
 		{NULL, NULL}
 	};
 	lt.val = grid[1];

@@ -27,3 +27,21 @@ void error_handling(int argc, char **argv, FILE **file)
 	}
 	*file = fil;
 }
+
+/**
+* print_zerodiv_error - ENTRYPOINT
+* @line_number: line_number
+* @h: header
+* Return: 0 success or uint
+*/
+void print_zerodiv_error(stack_t *h, int line_number)
+{
+	write(STDERR_FILENO, "L", 1);
+	prinInt(line_number);
+	write(STDERR_FILENO, ": division by zero\n",
+	_strlen(": division by zero"));
+	free_stack(h);
+	fclose(lt.file);
+	free_grid(lt.biggrid);
+	exit(EXIT_FAILURE);
+}
