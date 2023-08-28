@@ -39,7 +39,7 @@ void print_zerodiv_error(stack_t *h, int line_number)
 	write(STDERR_FILENO, "L", 1);
 	prinInt(line_number);
 	write(STDERR_FILENO, ": division by zero\n",
-	_strlen(": division by zero"));
+	_strlen(": division by zero\n"));
 	free_stack(h);
 	fclose(lt.file);
 	free_grid(lt.biggrid);
