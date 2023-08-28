@@ -90,7 +90,16 @@ void rotl(stack_t **header, unsigned int line_number)
 {
 	stack_t *tmp = *header;
 	stack_t *store = *header;
+	int i = 0;
 
+	while (tmp)
+	{
+		i++;
+		if (i >= 2)
+			break;
+		tmp = tmp->next;
+	}
+	if (i > 2)
 	while (tmp)
 	{
 		if (!tmp->next)
