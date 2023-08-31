@@ -37,6 +37,8 @@ void rotr(stack_t **header, unsigned int line_number)
 	stack_t *tmp = *header;
 	int store0 = 0, store1, flag = 0;
 
+	if (!tmp)
+		return;
 	store0 = tmp->n;
 	while (tmp)
 	{
