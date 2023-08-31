@@ -41,7 +41,7 @@ void rotr(stack_t **header, unsigned int line_number)
 	{
 		if (!tmp->next)
 		{
-			(*header)->n = store0;
+			(*header)->n = tmp->n;
 			return;
 		}
 		if (!flag)
