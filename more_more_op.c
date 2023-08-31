@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
-* rotr - rotr function
+* reverstack - rotr function
 * @header: header parameter
 * @line_number: line number
 * Return: 0 success or uint
 */
-void rotr(stack_t **header, unsigned int line_number)
+void reverstack(stack_t **header, unsigned int line_number)
 {
 	stack_t *tmp = *header;
 
@@ -22,6 +22,37 @@ void rotr(stack_t **header, unsigned int line_number)
 		tmp = tmp->next;
 		tmp->prev->next = tmp->prev->prev;
 		tmp->prev->prev = tmp;
+	}
+	line_number++;
+}
+
+/**
+* rotr - rotr function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void rotr(stack_t **header, unsigned int line_number)
+{
+	stack_t *tmp = *header;
+	int store0 = 0, store1, flag = 0;
+
+	while (tmp)
+	{
+		if (!tmp->next)
+		{
+			(*header)->n = store0;
+			return;
+		}
+		if (!flag)
+		{
+			store0 = tmp->n;
+			flag = 1;
+		}
+		store1 = tmp->next->n;
+		tmp->next->n = store0;
+		store0 = store1;
+		tmp = tmp->next;
 	}
 	line_number++;
 }

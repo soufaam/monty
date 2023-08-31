@@ -86,5 +86,6 @@ void _pchar(stack_t **header, unsigned int line_number);
 void pstr(stack_t **header, unsigned int line_number);
 void rotl(stack_t **header, unsigned int line_number);
 void rotr(stack_t **header, unsigned int line_number);
+void reverstack(stack_t **header, unsigned int line_number);
 
 #endif
