@@ -96,9 +96,9 @@ void exec_cmd(stack_t **header, char **grid, int line_number)
 
 	instruction_t opcode_tab[] = {
 		{"push", _push}, {"pop", _pop}, {"rotl", rotl},
-		{"pall", printall}, {"pint", printop},{"rotr", rotr},
-		{"add", _add}, {"sub", _sub}, {"pstr", pstr},
-		{"mod", _mod}, {"div", _div}, {"mul", _mul},
+		{"pall", printall}, {"pint", printop}, {"rotr", rotr},
+		{"add", _add}, {"sub", _sub}, {"pstr", pstr}, {"stack", stack},
+		{"mod", _mod}, {"div", _div}, {"mul", _mul}, {"queue", queue},
 		{"nop", _nop}, {"swap", _swap}, {"pchar", _pchar},
 		{NULL, NULL}
 	};

@@ -30,6 +30,11 @@ void _push(stack_t **header, unsigned int line_number)
 		free_stack(node);
 		exit(EXIT_FAILURE);
 	}
+	if (lt.status)
+	{
+		add_dnodeint_end(header, num);
+		return;
+	}
 	if (tmp)
 	{
 		node->next = tmp;

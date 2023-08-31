@@ -1,7 +1,7 @@
 #include "monty.h"
 #define MAX_LINE_LENGTH 1024
 
-var_t lt = {NULL, NULL, NULL, NULL};
+var_t lt = {NULL, NULL, NULL, NULL, 0};
 /**
  * main - entry point
  * @argc: The number of argument

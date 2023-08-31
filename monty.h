@@ -54,6 +54,8 @@ typedef struct var
 	char **grid;
 	char **biggrid;
 	FILE *file;
+	int status;
+
 }var_t;
 
 extern var_t lt;
@@ -83,9 +85,12 @@ void _mod(stack_t **header, unsigned int line_number);
 void _mul(stack_t **header, unsigned int line_number);
 void print_zerodiv_error(stack_t *h, int line_number);
 void _pchar(stack_t **header, unsigned int line_number);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 void pstr(stack_t **header, unsigned int line_number);
 void rotl(stack_t **header, unsigned int line_number);
 void rotr(stack_t **header, unsigned int line_number);
 void reverstack(stack_t **header, unsigned int line_number);
+void queue(stack_t **header, unsigned int line_number);
+void stack (stack_t **header, unsigned int line_number);
 
 #endif

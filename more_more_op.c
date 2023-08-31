@@ -59,3 +59,29 @@ void rotr(stack_t **header, unsigned int line_number)
 	}
 	line_number++;
 }
+
+/**
+* queue - rotr function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void queue(stack_t **header, unsigned int line_number)
+{
+	(void)header;
+	(void)line_number;
+	lt.status = 1;
+}
+
+/**
+* stack - rotr function
+* @header: header parameter
+* @line_number: line number
+* Return: 0 success or uint
+*/
+void stack(stack_t **header, unsigned int line_number)
+{
+	(void)header;
+	(void)line_number;
+	lt.status = 0;
+}
