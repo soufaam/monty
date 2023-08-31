@@ -33,6 +33,7 @@ void _push(stack_t **header, unsigned int line_number)
 	if (lt.status)
 	{
 		add_dnodeint_end(header, num);
+		free(node);
 		return;
 	}
 	if (tmp)
